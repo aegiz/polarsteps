@@ -1,0 +1,23 @@
+{
+  "name": "polarstep",
+  "version": "1.0.0",
+  "description": "Test of the Polarstep Step API",
+  "main": "polarstep.js",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aegiz/polarstep.git"
+  },
+  "author": "Adrien Rahier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aegiz/polarstep/issues"
+  },
+  "homepage": "https://github.com/aegiz/polarstep#readme"
+}
