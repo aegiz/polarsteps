@@ -1,8 +1,8 @@
 const fetch = require("node-fetch");
 
-const TRIP_ID = 3703825; // Something you get in the URL once the trip has been created
+const TRIP_ID = 3746713; // Something you get in the URL once the trip has been created
 
-const inputs = [
+const INPUTS = [
   { start: "2020-04-01", lon: "4.837067382196995", lat: "52.37243058415131" },
   { start: "2020-04-02", lon: "4.844464222883373", lat: "52.37303377805576" },
   { start: "2020-04-03", lon: "4.847040103359832", lat: "52.38347081647134" },
@@ -144,14 +144,14 @@ const makeRequest = (nb) => {
       "sec-fetch-mode": "cors",
       "sec-fetch-site": "same-origin",
       cookie:
-        "_ga=GA1.2.1610489187.1597690375; _fbp=fb.1.1597690384000.2042532823; _gid=GA1.2.789637026.1597839855; remember_token=2907717|16ef56d93696cf6ea483f98d8b4e570d35fe3a32; mp_204e5b13fb0844e6f13e8f9b3543c2ab_mixpanel=%7B%22distinct_id%22%3A%20%22173fdc476b67de-0f97b72dfd7aaa-6837027e-1aeaa0-173fdc476b76e1%22%2C%22%24device_id%22%3A%20%22173fdc476b67de-0f97b72dfd7aaa-6837027e-1aeaa0-173fdc476b76e1%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%7D; _gat=1; session=eyJfZnJlc2giOmZhbHNlLCJfaWQiOnsiIGIiOiJZelpqWWpjNVltSTVPRFZpT0RrME1UbGpaalZsWlRBMU5qY3pNRGRpWmpFPSJ9LCJ1c2VyX2lkIjoiMjkwNzcxNyJ9.Eh_toQ.2o_OeIVsvJqfedRqMeeXfwIqZjU",
+        "_ga=GA1.2.1610489187.1597690375; _fbp=fb.1.1597690384000.2042532823; _gid=GA1.2.1566252256.1599492542; _gat=1; remember_token=893586|962b9cda7fecaa6c4c016b5eca61e60c90f1440e; session=eyJfZnJlc2giOnRydWUsIl9pZCI6eyIgYiI6IlptVm1NbUZsWldGbVpUYzJNbVkzTm1ZNU5UWmlaV1JoWW1abVlUVTNNVEE9In0sInVzZXJfaWQiOiI4OTM1ODYifQ.EjfjrQ.475SNH3C9VtLbHNRzH-77gUR_K4; mp_204e5b13fb0844e6f13e8f9b3543c2ab_mixpanel=%7B%22distinct_id%22%3A%20%2249723859-3f69-476b-96a4-9c42c501330d%22%2C%22%24device_id%22%3A%20%221746930c8e3262-0eb2f4f5124338-6831017f-1aeaa0-1746930c8e433b%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24user_id%22%3A%20%2249723859-3f69-476b-96a4-9c42c501330d%22%2C%22platform%22%3A%20%22desktop%22%2C%22current_trip_exists%22%3A%20false%2C%22total_steps%22%3A%20229%2C%22total_trips%22%3A%202%2C%22private_account%22%3A%20true%7D",
     },
     referrerPolicy: "no-referrer-when-downgrade",
     body:
       '{"name":"Amsterdam","lat":' +
-      inputs[nb].lat +
+      INPUTS[nb].lat +
       ',"lon":' +
-      inputs[nb].lon +
+      INPUTS[nb].lon +
       ',"detail":"Netherlands","full_detail":"Noord-Holland, Netherlands","country_code":"NL"}',
     method: "POST",
     mode: "cors",
@@ -176,7 +176,7 @@ const makeRequest = (nb) => {
           "sec-fetch-mode": "cors",
           "sec-fetch-site": "same-origin",
           cookie:
-            "_ga=GA1.2.1610489187.1597690375; _fbp=fb.1.1597690384000.2042532823; _gid=GA1.2.789637026.1597839855; remember_token=2907717|16ef56d93696cf6ea483f98d8b4e570d35fe3a32; mp_204e5b13fb0844e6f13e8f9b3543c2ab_mixpanel=%7B%22distinct_id%22%3A%20%22173fdc476b67de-0f97b72dfd7aaa-6837027e-1aeaa0-173fdc476b76e1%22%2C%22%24device_id%22%3A%20%22173fdc476b67de-0f97b72dfd7aaa-6837027e-1aeaa0-173fdc476b76e1%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%7D; _gat=1; session=eyJfZnJlc2giOmZhbHNlLCJfaWQiOnsiIGIiOiJZelpqWWpjNVltSTVPRFZpT0RrME1UbGpaalZsWlRBMU5qY3pNRGRpWmpFPSJ9LCJ1c2VyX2lkIjoiMjkwNzcxNyJ9.Eh_tpw.8tr7OAc59MfpxFCJE5Dejcw7oNA",
+            "_ga=GA1.2.1610489187.1597690375; _fbp=fb.1.1597690384000.2042532823; _gid=GA1.2.1566252256.1599492542; _gat=1; remember_token=893586|962b9cda7fecaa6c4c016b5eca61e60c90f1440e; session=eyJfZnJlc2giOnRydWUsIl9pZCI6eyIgYiI6IlptVm1NbUZsWldGbVpUYzJNbVkzTm1ZNU5UWmlaV1JoWW1abVlUVTNNVEE9In0sInVzZXJfaWQiOiI4OTM1ODYifQ.EjfjrQ.475SNH3C9VtLbHNRzH-77gUR_K4; mp_204e5b13fb0844e6f13e8f9b3543c2ab_mixpanel=%7B%22distinct_id%22%3A%20%2249723859-3f69-476b-96a4-9c42c501330d%22%2C%22%24device_id%22%3A%20%221746930c8e3262-0eb2f4f5124338-6831017f-1aeaa0-1746930c8e433b%22%2C%22%24initial_referrer%22%3A%20%22%24direct%22%2C%22%24initial_referring_domain%22%3A%20%22%24direct%22%2C%22%24user_id%22%3A%20%2249723859-3f69-476b-96a4-9c42c501330d%22%2C%22platform%22%3A%20%22desktop%22%2C%22current_trip_exists%22%3A%20false%2C%22total_steps%22%3A%20229%2C%22total_trips%22%3A%202%2C%22private_account%22%3A%20true%7D",
         },
         referrerPolicy: "no-referrer-when-downgrade",
         body:
@@ -187,13 +187,13 @@ const makeRequest = (nb) => {
           ',"name":"' +
           (nb + 1) +
           '","description":"' +
-          inputs[nb].lat +
+          INPUTS[nb].lat +
           ", " +
-          inputs[nb].lon +
+          INPUTS[nb].lon +
           '","start_time":"' +
-          inputs[nb].start +
+          INPUTS[nb].start +
           'T10:00:00+00:00","creation_time":"' +
-          inputs[nb].start +
+          INPUTS[nb].start +
           'T14:09:01+00:00","timezone_id":"Europe/Amsterdam"}',
         method: "POST",
         mode: "cors",
@@ -206,7 +206,7 @@ const makeRequest = (nb) => {
         })
         .then((data) => {
           console.log("DONE ", nb + 1);
-          if (nb + 1 === inputs.length) {
+          if (nb + 1 === INPUTS.length) {
             console.log("Finish!");
           } else {
             makeRequest(nb + 1);
